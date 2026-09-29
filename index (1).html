@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Athul Hareendran — Communications, Program Management, Partnerships and Events.">
+  <title>Athul Hareendran — Portfolio</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#020617;
+  --surface:rgba(15,23,42,.75);
+  --surface2:rgba(30,41,59,.75);
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --accent2:#8b5cf6;
+  --line:rgba(255,255,255,.08);
+  --radius:24px;
+  --max:1200px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:
+  radial-gradient(circle at 10% 20%, rgba(56,189,248,.2), transparent 25%),
+  radial-gradient(circle at 90% 80%, rgba(139,92,246,.15), transparent 24%),
+  #020617;
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.wrap{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  backdrop-filter:blur(20px);
+  background:rgba(2,6,23,.7);
+  border-bottom:1px solid var(--line);
+}
+
+nav{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-size:1.2rem;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+
+.nav{
+  display:flex;
+  gap:24px;
+}
+
+.nav a{
+  color:var(--muted);
+  transition:.3s;
+}
+
+.nav a:hover{
+  color:white;
+}
+
+.hero{
+  min-height:95vh;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:center;
+  padding:60px 0;
+}
+
+.eyebrow{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:.8rem;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(4rem,8vw,7rem);
+  line-height:.95;
+  letter-spacing:-.08em;
+  font-weight:900;
+
+  background:linear-gradient(
+      135deg,
+      #ffffff,
+      #38bdf8,
+      #8b5cf6
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-lede{
+  max-width:700px;
+  color:var(--muted);
+  font-size:1.1rem;
+  margin:30px 0;
+}
+
+.button-row{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 24px;
+  border-radius:50px;
+  border:1px solid var(--line);
+  transition:.35s ease;
+  font-weight:700;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+}
+
+.btn.primary{
+  background:linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent2)
+  );
+  border:none;
+  color:white;
+}
+
+.hero-photo{
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+}
+
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent2)
+  );
+  z-index:-1;
+  border-radius:30px;
+}
+
+.hero-photo img{
+  width:100%;
+  border-radius:28px;
+}
+
+.hero-note,
+.mini,
+.work-card,
+.metric,
+.box,
+.contact{
+  background:rgba(15,23,42,.7);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+}
+
+.hero-note{
+  padding:25px;
+  border-radius:24px;
+}
+
+section{
+  padding:100px 0;
+}
+
+.section-head{
+  margin-bottom:50px;
+}
+
+.section-head h2{
+  font-size:clamp(2.5rem,5vw,4rem);
+  letter-spacing:-.06em;
+  margin-bottom:15px;
+}
+
+.section-head p{
+  color:var(--muted);
+  max-width:700px;
+}
+
+.grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.mini{
+  padding:24px;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.mini:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(56,189,248,.15);
+}
+
+.work-card{
+  overflow:hidden;
+  border-radius:24px;
+  transition:.4s;
+}
+
+.work-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 50px rgba(56,189,248,.18);
+}
+
+.media{
+  aspect-ratio:16/9;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(
+      transparent,
+      rgba(2,6,23,.8)
+  );
+}
+
+.media span{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  z-index:2;
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(10px);
+  padding:8px 14px;
+  border-radius:40px;
+}
+
+.card-body{
+  padding:25px;
+}
+
+.card-body h3{
+  margin-bottom:10px;
+  font-size:1.4rem;
+}
+
+.card-body p{
+  color:var(--muted);
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.tag,
+.pill{
+  padding:7px 12px;
+  border-radius:100px;
+  font-size:.8rem;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+}
+
+.case{
+  padding:70px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.metric-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:30px 0;
+}
+
+.metric{
+  border-radius:18px;
+  padding:20px;
+}
+
+.metric strong{
+  display:block;
+  font-size:2rem;
+  color:var(--accent);
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:20px;
+}
+
+.box{
+  border-radius:20px;
+  padding:24px;
+}
+
+.box p{
+  color:var(--muted);
+}
+
+.contact{
+  padding:50px;
+  border-radius:30px;
+  background:
+  linear-gradient(
+      135deg,
+      rgba(56,189,248,.15),
+      rgba(139,92,246,.15)
+  );
+}
+
+footer{
+  padding:40px 0;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.hero,
+.grid-4,
+.grid-3,
+.two-col,
+.metric-grid{
+  grid-template-columns:1fr;
+}
+
+.nav{
+  display:none;
+}
+
+h1{
+  font-size:4rem;
+}
+}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top">ATHUL HAREENDRAN</a>
+        <div class="nav">
+          <a href="#work">Work</a>
+          <a href="#programs">Programs</a>
+          <a href="#creative">Creative</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero" style="border-top:0">
+        <div>
+          <div class="eyebrow">Communications · Programs · Partnerships · Events</div>
+          <h1>More than one lane.</h1>
+          <p class="hero-lede">
+            I'm Athul Hareendran, a versatile communications and program professional
+            with experience across sports, partnerships, events and organizations in different sectors.
+          </p>
+          <div class="button-row">
+            <a class="btn primary" href="#work">View my work ↓</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="hero-photo">
+            <img src="athul-profile.jpg" alt="Athul Hareendran in a light grey suit">
+          </div>
+          <div class="hero-note">
+            <h3>How I work</h3>
+            <p>
+              I move between strategy and execution — planning communication,
+              managing programs, building relationships, coordinating teams,
+              running events and getting hands-on with content when needed.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>What I do</h2>
+          <p>
+            My strongest areas are connected by one thing: taking ownership and
+            making sure ideas move from planning to execution.
+          </p>
+        </div>
+        <div class="grid-4">
+          <article class="mini"><small>01</small><h3>Strategic Communication</h3><p>Content strategy, storytelling, social media, newsletters and organizational communication.</p></article>
+          <article class="mini"><small>02</small><h3>Program Management</h3><p>Planning, coordination, operations, registrations, reporting and delivery.</p></article>
+          <article class="mini"><small>03</small><h3>Partnerships</h3><p>Corporate partners, universities, vendors, stakeholders and relationship management.</p></article>
+          <article class="mini"><small>04</small><h3>Events & Creative</h3><p>Event execution, sports events, photography, videography and content production.</p></article>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>Projects that show the range of work I can take on — from large events and programs to communications systems and creative execution.</p>
+        </div>
+        <div class="grid-3">
+          <article class="work-card">
+            <div class="media" style="background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75)),url('dsc-hero.jpg')"><span>Project 01 · Event Operations</span></div>
+            <div class="card-body"><h3>Dream Sports Championship</h3><p>Regional and national football tournament operations, from vendors and logistics to match-day execution.</p><div class="tags"><span class="tag">Program Management</span><span class="tag">Events</span><span class="tag">Operations</span></div></div>
+          </article>
+          <article class="work-card">
+            <div class="media" style="background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75)),url('coach-ed-hero.jpg')"><span>Project 02 · Program Management</span></div>
+            <div class="card-body"><h3>enJogo Coach Ed</h3><p>University outreach, partnerships, registrations, workshop delivery, certification and reporting.</p><div class="tags"><span class="tag">B2B</span><span class="tag">Partnerships</span><span class="tag">Programs</span></div></div>
+          </article>
+          <article class="work-card">
+            <div class="media" style="background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75)),url('navjyoti-comms.jpg')"><span>Project 03 · Communications</span></div>
+            <div class="card-body"><h3>Navjyoti Communications</h3><p>Organization-wide communication, team leadership, partner content and digital operations.</p><div class="tags"><span class="tag">Communication</span><span class="tag">Team Lead</span><span class="tag">Digital</span></div></div>
+          </article>
+          <article class="work-card">
+            <div class="media" style="background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75)),url('bbfs-social.jpg')"><span>Project 04 · Social Media</span></div>
+            <div class="card-body"><h3>BBFS Social Media</h3><p>Multi-platform account management, content coordination, community engagement and enquiry routing.</p><div class="tags"><span class="tag">Social</span><span class="tag">Content</span><span class="tag">Community</span></div></div>
+          </article>
+          <article class="work-card">
+            <div class="media" style="background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75)),url('cof-hero.jpg')"><span>Project 05 · Event Management</span></div>
+            <div class="card-body"><h3>Cherry Orchard Film Festival</h3><p>Two-day student film festival with 50+ entries, 20 screened films and a coordinated core team.</p><div class="tags"><span class="tag">Events</span><span class="tag">Planning</span><span class="tag">Coordination</span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="programs">
+        <div class="section-head">
+          <h2>Program & event management</h2>
+          <p>Hands-on work where planning, people, logistics and execution all had to work together.</p>
+        </div>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>01 · Tournament Operations</small>
+            <h3>Dream Sports Championship</h3>
+            <p>National U-17 football tournament with regional rounds and a national final.</p>
+          </div>
+          <div class="case-content">
+            <p>I was part of a five-person core team. For each assigned region, one core team member owned the on-ground execution, which meant I managed the complete event operation for the regions I was assigned to.</p>
+            <div class="metric-grid">
+              <div class="metric"><strong>5</strong><span>Core team members</span></div>
+              <div class="metric"><strong>6</strong><span>Cities in the tournament format</span></div>
+              <div class="metric"><strong>7</strong><span>Matches per regional round</span></div>
+            </div>
+            <div class="two-col">
+              <div class="box"><h4>Planning & logistics</h4><p>Budgeting, venue coordination, vendors, equipment, travel, accommodation, volunteers, registration and scheduling.</p></div>
+              <div class="box"><h4>Match operations</h4><p>Academy/team coordination, referees, match-day operations, reporting and communication with stakeholders.</p></div>
+              <div class="box"><h4>Mumbai 2023 final</h4><p>Trophy, merchandise, AIFF officials, team buses, venue management and live match operations across parallel activities.</p></div>
+              <div class="box"><h4>What I learned</h4><p>How to stay organized and communicate quickly when multiple moving parts have to come together on the ground.</p></div>
+            </div>
+            <div class="pill-row"><span class="pill">Budgeting</span><span class="pill">Vendors</span><span class="pill">Travel</span><span class="pill">Accommodation</span><span class="pill">Match Operations</span><span class="pill">Stakeholders</span></div>
+            <div class="gallery" style="margin-top:16px">
+              <div class="ph tall" style="padding:0;overflow:hidden"><img src="dsc-hero.jpg" alt="Winning team celebrating with trophy and confetti" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="dsc-01.jpg" alt="Core team at the Dream Sports Championship backdrop" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="dsc-02.jpg" alt="Athul on the pitch during the tournament" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="dsc-03.jpg" alt="Match officials and start list on matchday" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="dsc-04.jpg" alt="Match action during the national finals" style="width:100%;height:100%;object-fit:cover"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>02 · Festival Execution</small>
+            <h3>Cherry Orchard Film Festival</h3>
+            <p>Two-day student film festival in Shillong.</p>
+          </div>
+          <div class="case-content">
+            <p>I was part of a five-person core team and worked across planning, scheduling, screenings, venue coordination, jury support and team management.</p>
+            <div class="metric-grid">
+              <div class="metric"><strong>50+</strong><span>Film entries</span></div>
+              <div class="metric"><strong>20</strong><span>Films screened</span></div>
+              <div class="metric"><strong>~100</strong><span>Students attended</span></div>
+            </div>
+            <div class="two-col">
+              <div class="box"><h4>Planning & programming</h4><p>Supported festival scheduling, screening order and coordination around selected films.</p></div>
+              <div class="box"><h4>Team coordination</h4><p>Worked across branding, screening, food stalls and jury-support teams.</p></div>
+              <div class="box"><h4>Technical & venue</h4><p>Coordinated venue and technical requirements needed for the screenings.</p></div>
+              <div class="box"><h4>Jury & masterclass</h4><p>Managed student participation, scheduling and day-of coordination around the post-festival masterclass.</p></div>
+            </div>
+            <div class="gallery" style="margin-top:16px">
+              <div class="ph tall" style="padding:0;overflow:hidden"><img src="cof-hero.jpg" alt="Team setting up the festival banner outdoors" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="cof-01.jpg" alt="Official Cherry Orchard Film Festival poster" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="cof-02.jpg" alt="Hand-painted festival banner with programme highlights" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="cof-03.jpg" alt="Festival logo projected on screen during a session" style="width:100%;height:100%;object-fit:cover"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>03 · Media Coordination</small>
+            <h3>RuPay Pro Volleyball League</h3>
+            <p>Kochi · 2019</p>
+          </div>
+          <div class="case-content">
+            <p>One of my earliest experiences around a professional sports event. I supported media coordination across matches, working with journalists and helping manage press requirements.</p>
+            <div class="pill-row"><span class="pill">Media Registrations</span><span class="pill">Press Conference</span><span class="pill">Journalist Coordination</span><span class="pill">Live Updates</span><span class="pill">Interviews</span></div>
+          </div>
+        </article>
+
+        <article class="case" id="coach-ed">
+          <div class="case-sticky">
+            <small>04 · Program Management</small>
+            <h3>enJogo Coach Ed</h3>
+            <p>University B2B program · ~1 year</p>
+          </div>
+          <div class="case-content">
+            <p>I managed the B2B university side of the coach-education program, taking it from prospect research and outreach through partnership discussions, registrations, delivery and reporting.</p>
+            <div class="steps">
+              <div class="step"><b>01</b><span>Research universities and sports institutions</span></div>
+              <div class="step"><b>02</b><span>Outreach through calls, email and visits</span></div>
+              <div class="step"><b>03</b><span>Pitch, negotiate and build relationships</span></div>
+              <div class="step"><b>04</b><span>Track registrations and payments</span></div>
+              <div class="step"><b>05</b><span>Coordinate instructors and delivery</span></div>
+              <div class="step"><b>06</b><span>Manage attendance and certification</span></div>
+              <div class="step"><b>07</b><span>Support residential/B2C workshops</span></div>
+              <div class="step"><b>08</b><span>Present updates and report internally</span></div>
+            </div>
+            <div class="two-col">
+              <div class="box"><h4>Institutions worked with</h4><p>LPU, IGIPESS, LNIPE, MIT, SKRCP and Vedas School are examples from the program.</p></div>
+              <div class="box"><h4>Locations</h4><p>Delhi, Gwalior, Chandigarh, Ludhiana and Shirpur were among the workshop locations.</p></div>
+            </div>
+            <div class="gallery" style="margin-top:16px">
+              <div class="ph tall" style="padding:0;overflow:hidden"><img src="coach-ed-hero.jpg" alt="enJogo Coach-Ed team photo on the field" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="coach-ed-01.jpg" alt="Coach-Ed team at the stadium with a match in the background" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="coach-ed-02.jpg" alt="Coach-Ed group photo at Vedas Hostel" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="coach-ed-03.jpg" alt="On-field briefing with participants during a workshop" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="coach-ed-04.jpg" alt="Classroom session during a Coach-Ed workshop" style="width:100%;height:100%;object-fit:cover"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="communications">
+        <div class="section-head">
+          <h2>Strategic communication</h2>
+          <p>Communication work across an organization, its partners, its audiences and its digital systems.</p>
+        </div>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>01 · Organization-wide</small>
+            <h3>Navjyoti India Foundation</h3>
+            <p>Communications · Team leadership · Digital operations</p>
+          </div>
+          <div class="case-content">
+            <p>I worked with the fundraising team and took ownership of organizational communication across five digital platforms while leading a small four-person communications team.</p>
+            <div class="metric-grid">
+              <div class="metric"><strong>4</strong><span>People in the communications team</span></div>
+              <div class="metric"><strong>5</strong><span>Social/digital platforms managed</span></div>
+              <div class="metric"><strong>3</strong><span>Corporate partners referenced in core work</span></div>
+            </div>
+            <div class="two-col">
+              <div class="box"><h4>Content workflow</h4><p>Built and managed the content calendar, briefs, assets, design follow-ups, publishing and coordination across the team.</p></div>
+              <div class="box"><h4>Monday.com transition</h4><p>Moved planning from Canva into a shared Monday.com calendar so designers could see upcoming requirements directly instead of relying on repeated manual sharing.</p></div>
+              <div class="box"><h4>Partner communications</h4><p>Worked on content planning for Dell, Microsoft and SMFG, including ideas, visual direction, captions and multi-month planning.</p></div>
+              <div class="box"><h4>Website & newsletters</h4><p>Managed WordPress website updates, worked on-page SEO and created monthly donor/stakeholder newsletters through EmailOctopus.</p></div>
+            </div>
+            <div class="pill-row"><span class="pill">LinkedIn</span><span class="pill">Instagram</span><span class="pill">Facebook</span><span class="pill">Twitter/X</span><span class="pill">YouTube</span><span class="pill">WordPress</span><span class="pill">EmailOctopus</span><span class="pill">Monday.com</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>02 · Social Media</small>
+            <h3>BBFS</h3>
+            <p>Social Media Accounts Manager</p>
+          </div>
+          <div class="case-content">
+            <p>I managed the day-to-day social presence across Facebook, Instagram, Twitter, YouTube and LinkedIn, working closely with videographers and editors on content planning and publishing.</p>
+            <div class="metric-grid">
+              <div class="metric"><strong>~40K → 55K</strong><span>Follower range during my tenure</span></div>
+              <div class="metric"><strong>5</strong><span>Platforms managed</span></div>
+              <div class="metric"><strong>Always-on</strong><span>Consistency & community focus</span></div>
+            </div>
+            <div class="two-col">
+              <div class="box"><h4>Content planning</h4><p>Content buckets, calendars, asset reviews, captions, posting times and scheduling.</p></div>
+              <div class="box"><h4>Community</h4><p>Monitored DMs, engagement and audience conversations while maintaining consistent publishing.</p></div>
+              <div class="box"><h4>Lead generation</h4><p>Supported social-media-driven enquiries around football trials, Residential Academy admissions and camps.</p></div>
+              <div class="box"><h4>Content approach</h4><p>Engagement-led football content and relatable posts aimed at younger audiences and parents.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="creative">
+        <div class="section-head">
+          <h2>Creative work</h2>
+          <p>Hands-on visual work that supports communication, events and storytelling.</p>
+        </div>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>01 · Photography</small>
+            <h3>Photography</h3>
+            <p>Trials · match action · emotions · portraits</p>
+          </div>
+          <div class="case-content">
+            <p>My photography is primarily centered around football — capturing trials and selection environments, match action, player emotions and portraits created for partners.</p>
+            <div class="gallery">
+              <div class="ph tall" style="padding:0;overflow:hidden"><img src="football-action-01.jpg" alt="Football match action shot" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="football-trial-01.jpg" alt="Football trial / match scene" style="width:100%;height:100%;object-fit:cover"></div>
+              <div class="ph" style="padding:0;overflow:hidden"><img src="player-emotion-01.jpg" alt="Player in focused moment during a drill" style="width:100%;height:100%;object-fit:cover"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>02 · Videography</small>
+            <h3>Video</h3>
+            <p>Testimonials · action · events</p>
+          </div>
+          <div class="case-content">
+            <p>I have shot player testimonials, action footage and event videos for communication and social media use.</p>
+            <div class="two-col">
+              <div class="box"><h4>Player testimonials</h4><p>Framing, shooting and capturing personal stories and interview-led content.</p></div>
+              <div class="box"><h4>Event & action</h4><p>Short-form footage covering football activities, events and moments for communication.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-sticky">
+            <small>03 · Editing</small>
+            <h3>DaVinci Resolve</h3>
+            <p>Basic post-production</p>
+          </div>
+          <div class="case-content">
+            <p>I use DaVinci Resolve for basic editing: cuts, sequencing, transitions, text and preparing video for social and communication purposes.</p>
+            <div class="two-col">
+              <div class="box"><h4>BBFS</h4><p>Worked with a videographer and editor, briefing the team and coordinating the final output.</p></div>
+              <div class="box"><h4>Navjyoti</h4><p>Personally handled shooting, photography and editing for events and testimonials.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <h2>About me</h2>
+          <p>More than one lane.</p>
+        </div>
+        <div class="two-col">
+          <div class="box">
+            <h4>How I describe my work</h4>
+            <p>I'm a versatile communications and program professional with experience across sports, partnerships, events and organizations in different sectors. My strongest areas are strategic communication, program management, partnerships and event execution.</p>
+          </div>
+          <div class="box">
+            <h4>How I like to work</h4>
+            <p>I enjoy roles where I can move between strategy and execution, work with different kinds of people, solve practical problems and take ownership of getting things done.</p>
+          </div>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Strategic Communication</span>
+          <span class="pill">Program Management</span>
+          <span class="pill">Partnership Development</span>
+          <span class="pill">Event Management</span>
+          <span class="pill">Stakeholder Management</span>
+          <span class="pill">Social Media</span>
+          <span class="pill">Writing & Storytelling</span>
+          <span class="pill">Photography</span>
+          <span class="pill">Videography</span>
+          <span class="pill">Team Coordination</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="role"><div class="date">Aug 2025 – Aug 2026</div><div><h3>Navjyoti India Foundation</h3><p>Communications · Team leadership · Partner communication · Digital operations</p></div></div>
+          <div class="role"><div class="date">July 2023 – Jan 2025</div><div><h3>Bhaichung Bhutia Football Schools</h3><p>Social Media Accounts Manager</p></div></div>
+          <div class="role"><div class="date">Jan 2023 – Feb 2025</div><div><h3>Indian Football Foundation</h3><p>Business development · Program/event work · Football development</p></div></div>
+          <div class="role"><div class="date">Sept 2020 – Mar 2021</div><div><h3>Sutherland Global Services</h3><p>Associate</p></div></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div>
+            <div class="eyebrow">Let's connect</div>
+            <h2>Build, communicate, execute.</h2>
+            <p>
+              I'm open to opportunities across communications, program management,
+              partnerships, events and roles that value versatility.
+            </p>
+          </div>
+          <div class="button-row" style="align-self:end">
+            <a class="btn primary" href="mailto:athulhareendran98@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/athul-hareendran-491553183/">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 Athul Hareendran</span>
+        <span>Built for GitHub Pages</span>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
